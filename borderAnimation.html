@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <!--  -->
+    <style>
+        .container{
+            display: flex;
+            gap: 20px;
+        }
+        .parentDiv1,.parentDiv2 ,.parentDiv3 ,.parentDiv4 {
+            width: 600px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background:#fff;
+        }
+        .parentDiv1:before{
+            content: '';
+            position: absolute;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            left: -3px;
+            top: -3px;
+            z-index: -1;
+            animation-name: movetoright1;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            background: linear-gradient(90deg,green 50%,white, green);
+            background-position: -600px 0; 
+            background-size: 200%; 
+        }
+        .parentDiv2:before{
+            content: '';
+            position: absolute;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            left: -3px;
+            top: -3px;
+            z-index: -1;
+            animation-name: movetoright2;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            background: linear-gradient(180deg,green 50%,white, green);
+            background-position: 0 -600px; 
+            background-size: 200%; 
+        }
+        .parentDiv3:before{
+            content: '';
+            position: absolute;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            left: -3px;
+            top: -3px;
+            z-index: -1;
+            animation-name: movetoright3;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            background: linear-gradient(270deg,green 50%,white, green);
+            background-position: 600px 0; 
+            background-size: 200%; 
+        }
+        .parentDiv4:before{
+            content: '';
+            position: absolute;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            left: -3px;
+            top: -3px;
+            z-index: -1;
+            animation-name: movetoright4;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            background: linear-gradient(360deg,green 50%,white, green);
+            background-position: 0 600px; 
+            background-size: 200%; 
+        }
+        @keyframes movetoright1{
+            from{
+                background-position: -600px 0; /*this will same as we adding above*/
+
+            }
+            to{
+                background-position: 600px 0;
+            }
+        }
+        @keyframes movetoright2{
+            from{
+                background-position: 0 -600px; /*this will same as we adding above*/
+
+            }
+            to{
+                background-position: 0 600px;
+            }
+        }
+        @keyframes movetoright3{
+            from{
+                background-position: 600px 0; /*this will same as we adding above*/
+
+            }
+            to{
+                background-position:-600px 0;
+            }
+        }
+        @keyframes movetoright4{
+            from{
+                background-position: 0 600px; /*this will same as we adding above*/
+
+            }
+            to{
+                background-position:0 -600px;
+            }
+        }
+    </style>
+    <!--  -->
+</head>
+<body>
+    <div class="container">
+        <div class="parentDiv parentDiv1">
+            <h1>90</h1>
+            <button>Click Here</button>
+        </div>
+        <div class="parentDiv parentDiv2">
+            <h1>180</h1>
+            <button>Click Here</button>
+        </div>
+        <div class="parentDiv parentDiv3">
+            <h1>270</h1>
+            <button>Click Here</button>
+        </div>
+        <div class="parentDiv parentDiv4">
+            <h1>360</h1>
+            <button>Click Here</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+90deg - left to right === x=- y=0
+180deg - top to bottom === x=0 y=-
+270deg - right to left === x=+ y=0
+360deg - bottom to top === x=0 y=+
+
+
+90° — The gradient goes from left to right (horizontal).
+180° — The gradient goes from top to bottom (vertical).
+270° — The gradient goes from right to left (horizontal, opposite of 90°).
+360° — The gradient goes from bottom to top (vertical, opposite of 180°).
+
+
+to right (equivalent to 90deg)
+to bottom (equivalent to 180deg)
+to left (equivalent to 270deg)
+to top (equivalent to 360deg)
+
+
+background-position: <horizontal-position> <vertical-position>;
+
+-->
