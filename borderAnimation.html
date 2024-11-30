@@ -145,6 +145,43 @@
             }
         }
         
+
+
+        .bgcontainer {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden; 
+    margin-top: 60px;
+}
+
+.bgcontainer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #cfe7cf 10%, white 90%);
+    background-size: 100% 200%;
+    background-position: 0 0;
+    animation: bgmove 4s infinite linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bgmove {
+    0% {
+        background-position: 0 0;  /* Start at the top of the container */
+    }
+    50% {
+        background-position: 0 100%;  /* End at the bottom of the container */
+    }
+    100%{
+        background-position: 0 0;  /* Start at the top of the container */
+
+    }
+}
+
     </style>
     <!--  -->
 </head>
@@ -166,6 +203,9 @@
             <h1>360</h1>
             <button>Click Here</button>
         </div>
+    </div>
+    <div class="bgcontainer">
+
     </div>
 </body>
 </html>
